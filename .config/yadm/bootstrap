@@ -8,3 +8,6 @@ sh $HOME/runs/nerdfonts
 
 #rust utils
 sh $HOME/runs/rust_tools
+
+#fish shell
+sh $HOME/runs/fish_shell
