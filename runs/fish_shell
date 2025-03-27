@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#install fish
+sudo pacman -S fish fisher
+
+#install fish plugins
+# fish -l
+
+# fisher install jorgebucaran/nvm.fish
