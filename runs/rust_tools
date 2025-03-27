@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo pacman -S zoxide
+sudo pacman -S ripgrep
+sudo pacman -S eza
+sudo pacman -S lsd
+sudo pacman -S bat
+sudo pacman -S fzf
+yay -S jql

@@ -6,3 +6,5 @@ sh $HOME/runs/basic
 #now some fonts
 sh $HOME/runs/nerdfonts
 
+#rust utils
+sh $HOME/runs/rust_tools
