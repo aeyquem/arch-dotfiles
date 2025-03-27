@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#base config
+cd $HOME
+mkdir Apps
+
+sudo pacman -S wget
+sudo pacman -S base-devel
+
+#install yay
+cd $HOME/Apps
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
+
