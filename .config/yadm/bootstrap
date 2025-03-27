@@ -11,3 +11,6 @@ sh $HOME/runs/rust_tools
 
 #fish shell
 sh $HOME/runs/fish_shell
+
+#docker desktop
+sh $HOME/runs/docker_desktop
