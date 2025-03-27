@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sudo pacman -S zed
+
+yay -S visual-studio-code-bin
+
+

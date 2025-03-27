@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#install fish
+sudo pacman -S fish fisher
+
+#install fish plugins
+
+
+fish -c 'fisher install jorgebucaran/nvm.fish'
+fish -c 'fisher install IlanCosman/tide@v6'

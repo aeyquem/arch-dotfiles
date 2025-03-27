@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# Default download URL format with a placeholder for version
+BASE_DOWNLOAD_URL="https://capacities-desktop-app.fra1.cdn.digitaloceanspaces.com/Capacities-"
+
+# Ask the user for the version (if none is provided, use the latest)
+read -p "Enter version (e.g. 1.46.1), or press Enter to download the script version (1.46.1): " VERSION
+
+# If no version is provided, fetch the latest version
+if [ -z "$VERSION" ]; then
+    echo "No version provided. Fetching the default version (1.46.1)..."
+    VERSION=1.46.1
+fi
+
+# Make sure the version was obtained
+if [ -z "$VERSION" ]; then
+    echo "Error: Unable to determine the version."
+    exit 1
+fi
+
+mkdir $HOME/Apps/Capacities
+
+LOGO_URL="https://drive.usercontent.google.com/download?id=1fV_W-rZ4lB8nBkry_stajBnqA6LQXbTb&export=download&confirm=t&uuid=a8e5a517-8dcb-4a7c-87a7-3cd3205ea885"
+LOGO_PATH="$HOME/Apps/Capacities/capacities.png"
+curl -L -c cookies.txt -o "$LOGO_PATH" "$LOGO_URL"
+
+if [ ! -f "$LOGO_PATH" ]; then
+    echo "Error: Failed to download the logo."
+    exit 1
+fi
+
+rm cookies.txt
+
+# Construct the download URL
+DOWNLOAD_URL="${BASE_DOWNLOAD_URL}${VERSION}.AppImage"
+echo "Downloading Capacities version $VERSION from $DOWNLOAD_URL"
+
+# Path to where you want to save the AppImage
+APPIMAGE_PATH="$HOME/Apps/Capacities/Capacities.AppImage"
+
+# Download the AppImage using curl
+curl -L -o "$APPIMAGE_PATH" "$DOWNLOAD_URL"
+
+# Check if the download was successful
+if [ ! -f "$APPIMAGE_PATH" ]; then
+    echo "Error: Failed to download the AppImage."
+    exit 1
+fi
+
+chmod +x "$APPIMAGE_PATH"
+
+echo "AppImage downloaded successfully to $APPIMAGE_PATH"
+
+# Create the .desktop entry file
+mkdir -p $HOME/.local/share/applications
+DESKTOP_FILE="$HOME/.local/share/applications/capacities.desktop"
+
+cat <<EOF > "$DESKTOP_FILE"
+[Desktop Entry]
+Name=Capacities
+Comment=Capacities Desktop App
+Exec=$APPIMAGE_PATH
+Icon=$LOGO_PATH
+Terminal=false
+Type=Application
+Categories=Utility;System;
+EOF
+
+# Make the .desktop file executable
+chmod +x "$DESKTOP_FILE"
+
+echo "Desktop entry for Capacities created successfully!"

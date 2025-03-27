@@ -4,8 +4,7 @@
 cd $HOME
 mkdir Apps
 
-sudo pacman -S wget
-sudo pacman -S base-devel
+sudo pacman -S wget base-devel less
 
 #install yay
 cd $HOME/Apps
@@ -13,3 +12,5 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si
 
+#now install neovim to have an editor
+sudo pacman -S neovim
