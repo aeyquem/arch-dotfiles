@@ -4,7 +4,7 @@
 sudo pacman -S fish fisher
 
 #install fish plugins
-fish -l
 
-fisher install jorgebucaran/nvm.fish
-fisher install IlanCosman/tide@v6
+
+fish -c fisher install jorgebucaran/nvm.fish
+fish -c fisher install IlanCosman/tide@v6
