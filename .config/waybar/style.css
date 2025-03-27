@@ -1,0 +1,51 @@
+@import "mocha.css";
+
+* {
+  font-family: "FiraCode Nerd Font";
+  font-size: 12px;
+  min-height: 0;
+}
+
+#waybar {
+  background: rgba(26, 27, 38, 0.616);
+  color: @text;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  background-color: @surface0;
+  margin: 2px;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 1rem;
+  /* padding: 0.4rem; */
+}
+
+#workspaces button.active {
+  color: @sky;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 1rem;
+}
+
+#custom-music,
+#tray,
+#clock,
+#pulseaudio,
+#custom-power,
+#network,
+#system {
+  background-color: @surface0;
+  padding: 0 1rem;
+  margin: 2px 0;
+  border-radius: 1rem;
+}
+
+#network {
+  padding-right: 18px;
+}

@@ -1,0 +1,117 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "spacing": 8, // Gaps between modules (4px)
+  "margin-left": 10,
+  "margin-right": 10,
+  "reload_style_on_change": true,
+  "modules-left": ["group/system", "tray", "hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    // "mpd",
+    // "idle_inhibitor",
+    "pulseaudio",
+    // "power-profiles-daemon",
+    // "cpu",
+    // "memory",
+    // "temperature",
+    // "backlight",
+    // "keyboard-state",
+    // "sway/language",
+    // "group/networking",
+    "network",
+    "clock",
+    "custom/power"
+  ],
+
+  /*
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "format": "<sub>{icon}</sub>{windows}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  */
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
+  },
+  "custom/power": {
+    "format": "⏻ ",
+    "tooltip": false,
+    "on-click": "wlogout &"
+  },
+
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰌘",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "󰖪 ",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 2,
+    "max-length": 30,
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click-right": "kitty -e nmtui"
+  },
+  "network#speed": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+    "format-disconnected": "󰖪 ",
+    "tooltip": false,
+    "interval": 1,
+    "max-length": 30,
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click-right": "kitty -e nmtui"
+  },
+
+  "clock": {
+    "format": "  {:%H:%M}",
+    "format-alt": "{:%A, %B %d, %Y (%R)} "
+  },
+
+  "cpu": {
+    "format": " {}% "
+  },
+
+  "memory": {
+    "format": " {percentage}%"
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input",
+    "format": "{temperatureC}°C"
+  },
+
+  "pulseaudio": {
+    "format": "󰕾 {volume}%",
+    "format-muted": " {volume}%"
+  },
+
+  //groups definitions
+  "group/networking": {
+    "orientation": "horizontal",
+    "modules": ["network", "network#speed"]
+  },
+
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory"]
+  }
+}
