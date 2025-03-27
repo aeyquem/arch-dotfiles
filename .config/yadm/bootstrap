@@ -1,1 +1,5 @@
-echo "hello from yadm"
+echo "installig stuff"
+
+#start with basic stuff
+sh $HOME/runs/basic
+
