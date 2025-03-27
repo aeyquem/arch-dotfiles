@@ -4,5 +4,4 @@ sudo pacman -S zed
 
 yay -S visual-studio-code-bin
 
-yay -S lunarvim-git
 

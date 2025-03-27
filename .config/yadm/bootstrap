@@ -15,5 +15,8 @@ sh $HOME/runs/fish_shell
 #docker desktop
 sh $HOME/runs/docker_desktop
 
+#editors
+sh $HOME/runs/code_editors
+
 #apps i use
 sh $HOME/runs/capacities
