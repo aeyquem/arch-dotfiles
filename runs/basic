@@ -13,3 +13,5 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si
 
+#now install neovim to have an editor
+sudo pacman -S neovim

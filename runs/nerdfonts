@@ -1,0 +1,5 @@
+#!/bin/bash
+
+yay -S getnf
+
+getnf -i FiraCode, Inconsolata, JetBrainsMono, Meslo, Terminus, Ubuntu

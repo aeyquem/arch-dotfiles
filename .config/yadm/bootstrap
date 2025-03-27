@@ -3,3 +3,6 @@ echo "installig stuff"
 #start with basic stuff
 sh $HOME/runs/basic
 
+#now some fonts
+sh $HOME/runs/nerdfonts
+
