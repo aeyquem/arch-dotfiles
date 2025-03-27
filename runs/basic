@@ -4,8 +4,7 @@
 cd $HOME
 mkdir Apps
 
-sudo pacman -S wget
-sudo pacman -S base-devel
+sudo pacman -S wget base-devel less
 
 #install yay
 cd $HOME/Apps
