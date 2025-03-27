@@ -2,5 +2,7 @@
 
 sudo pacman -S zed
 
-sudo yay -S visual-studio-code-bin
+yay -S visual-studio-code-bin
+
+yay -S lunarvim-git
 
