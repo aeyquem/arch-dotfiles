@@ -52,6 +52,7 @@ chmod +x "$APPIMAGE_PATH"
 echo "AppImage downloaded successfully to $APPIMAGE_PATH"
 
 # Create the .desktop entry file
+mkdir -p $HOME/.local/share/applications
 DESKTOP_FILE="$HOME/.local/share/applications/capacities.desktop"
 
 cat <<EOF > "$DESKTOP_FILE"
