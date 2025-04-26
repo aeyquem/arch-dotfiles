@@ -39,7 +39,8 @@
 #pulseaudio,
 #custom-power,
 #network,
-#system {
+#system,
+#custom-capslock {
   background-color: @surface0;
   padding: 0 1rem;
   margin: 2px 0;
@@ -48,4 +49,10 @@
 
 #network {
   padding-right: 18px;
+}
+
+#custom-capslock {
+  color: yellow;
+  font-weight: bold;
+  background-color: red;
 }
