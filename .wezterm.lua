@@ -7,10 +7,37 @@ config.enable_wayland = false
 config.keys = {
   {
     key = 'v',
-    mods = 'ALT|CTRL',
+    mods = 'SHIFT|CTRL',
     action = act.PasteFrom 'Clipboard'
   },
+  -- window management
+  {
+    key = 'n',
+    mods = 'ALT',
+    action = act.ActivateTabRelative(-1)
+  },
+  {
+    key = 'i',
+    mods = 'ALT',
+    action = act.ActivateTabRelative(1)
+  },
+  -- pane management
+  {
+    key = 'h',
+    mods = 'ALT|CTRL',
+    action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' },
+  },
+  {
+    key = 'v',
+    mods = 'ALT|CTRL',
+    action = act.SplitVertical{ domain =  'CurrentPaneDomain' },
+  },
+  { key = 'n', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Left' },
+  { key = 'e', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Down' },
+  { key = 'o', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Up' },
+  { key = 'i', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Right' },
 }
+
 config.color_scheme = 'Catppuccin Frappe'
 -- config.font = wezterm.font 'FiraCodeNerdFont'
 -- config.font = wezterm.font 'TerminessNerdFont'
