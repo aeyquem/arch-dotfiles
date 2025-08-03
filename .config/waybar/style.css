@@ -40,6 +40,7 @@
 #custom-power,
 #network,
 #system,
+#bluetooth,
 #custom-capslock {
   background-color: @surface0;
   padding: 0 1rem;
